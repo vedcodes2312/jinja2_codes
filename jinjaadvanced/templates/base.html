@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: #f3f4f6;
+        }
+
+        img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white px-6 py-4 shadow">
+        <div class="text-2xl font-bold tracking-wide">NumPy + Matplotlib Dashboard</div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 text-center py-3">
+        © 2025 NumPy+Matplotlib Report — Powered by Jinja2
+    </footer>
+
+</body>
+
+</html>
