@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 5px; } */
+        /* ul { padding-left: 20px; } */
+        /* li { margin-top: 4px; } */
+        .highlight {
+            font-weight: bold;
+            color: #0077cc;
+        }
+
+        .even {
+            color: green;
+            font-weight: bold;
+        }
+
+        .odd {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <title>jinja2 demo</title>
+</head>
+
+<body>
+
+    <!-- outermost div container -->
+    <div class="container bg-white p-6 rounded shadow-lg">
+
+        <!-- div1 for greet function -->
+        <div class="p-6 bg-white rounded shadow-lg mt-4">
+            <h2 class="text-blue-600 font-bold">1. calling greet function python</h2>
+            <div class="highlight mt-2">{{ greet(name) }}</div>
+        </div>
+
+        <!-- div2 custom filter -->
+        <div class="p-6 bg-white rounded shadow-lg mt-4">
+            <h2 class="text-blue-600 font-bold">2. calling custom filter reverse</h2>
+
+            <div class="mt-2">
+                <p><span class="highlight">Original:</span> {{ text }}</p>
+                <p><span class="highlight">Reversed:</span> {{ text | reverse }}</p>
+            </div>
+        </div>
+
+        <!-- div3 custom test-->>
+        <div class="p-4 mb-5 rounded border border-gray-200 shadow-sm">
+            <h2 class="text-green-700 font-bold">3. Custom Test (Even/Odd)</h2>
+
+            <div class="mt-2">
+                {% if num is evenodd %}
+                <p class="even">{{ num }} is Even ✔</p>
+                {% else %}
+                <p class="odd">{{ num }} is Odd ❌</p>
+                {% endif %}
+            </div>
+        </div>>
+
+
+        <!-- DIV 4: loop + square() -->
+        <div class="p-4 mb-5 rounded border border-gray-200 shadow-sm">
+            <h2 class="text-indigo-600 font-bold">4. Loop + Python Function</h2>
+
+            <ul class="list-group mt-2">
+                {% for n in nums %}
+                <li class="list-group-item bg-gray-50">
+                    {{ n }} → <span class="font-bold">{{ square(n) }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- DIV 5: global shout() -->
+        <div class="p-4 mb-5 rounded border border-gray-200 shadow-sm">
+            <h2 class="text-red-600 font-bold">5. Global Shout Function</h2>
+
+            <p class="highlight text-xl mt-2">{{ shout("jinja is powerful") }}</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>a
